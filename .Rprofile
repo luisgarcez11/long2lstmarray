@@ -1,0 +1,1 @@
+options(usethis.protocol = "ssh")
