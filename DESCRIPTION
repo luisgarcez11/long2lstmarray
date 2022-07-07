@@ -1,6 +1,6 @@
 Package: long2lstmarray
 Title: Longitudinal dataframes into arrays for machine learning training
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: 
     person(given = "Luís",
            family = "Garcez",
