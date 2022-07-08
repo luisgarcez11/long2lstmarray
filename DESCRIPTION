@@ -10,10 +10,15 @@ Authors@R:
 Description: An easy tool to transform 2D longitudinal data into arrays suitable for 
     LSTM (Long short-term memory) neural networks training. The array output can be
     used by the 'keras' package. 
-License: `use_mit_license()`
+License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 URL: https://github.com/luisgarcez11/long2lstmarray
 BugReports: https://github.com/luisgarcez11/long2lstmarray/issues
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Depends: 
+    R (>= 2.10)
