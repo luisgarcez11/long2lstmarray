@@ -10,6 +10,10 @@ Authors@R:
 Description: An easy tool to transform 2D longitudinal data into arrays suitable for 
     LSTM (Long short-term memory) neural networks training. The array output can be
     used by the 'keras' package. 
+Imports:
+    abind,
+    dplyr,
+    testthat
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
