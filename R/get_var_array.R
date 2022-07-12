@@ -69,6 +69,9 @@ slice_var_sequence <- function(sequence, lags, label_length = 1, label_output = 
 #' @param label_length How many values after are considered to be the label? Default to 1. If `label_length` = 1, the label value is always the value following the sliced sequence. 
 #' @param label_output logical. if `TRUE` a list including the matrix with the sliced sequences and a vector with the label is returned.
 #'
+#' @importFrom dplyr %>%
+#' @importFrom dplyr tibble
+#'
 #' @return If `label_output` is `FALSE`, a matrix with the sliced sequences is returned. If `label_output` is `TRUE`, a list with the matrix and vector with the labels from the same variable is returned.
 #' @export
 #'
@@ -82,7 +85,7 @@ get_var_array <- function(data, subj_var, var, time_var, lags,  label_length = 1
   #safeguard if the data is character
   if(is.character(data)){data <- eval(parse(text = data))}
   
-  data <- data %>% arrange(subjid, time_var)
+  data <- data %>% arrange(subj_var, time_var)
   
   x_array = tibble()
   y_array = c()

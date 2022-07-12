@@ -42,8 +42,12 @@ If \code{label_output} is \code{FALSE}, a 3D array with the sliced sequences is 
 Generate a matrix with various lags from a dataframe
 }
 \examples{
-longitudinal_array(alsfrs_data, "subjid", c("p1", "p2", "p3"), "visdy", lags = 3, label_output = FALSE)
-longitudinal_array(alsfrs_data, "subjid", c("p1", "p2", "p3"), "visdy", lags = 3, label_output = FALSE)[1,,]
-longitudinal_array(alsfrs_data, "subjid", c("p1", "p2", "p3"), "visdy", lags = 3, label_output = FALSE)[,1,]
-longitudinal_array(alsfrs_data, "subjid", c("p1", "p2", "p3"), "visdy", lags = 3, label_output = FALSE)[,,1]
+longitudinal_array(alsfrs_data, "subjid", c("p1", "p2", "p3"), 
+                   "visdy", lags = 3, label_output = FALSE)
+longitudinal_array(alsfrs_data, "subjid", c("p1", "p2", "p3"),
+                   "visdy", lags = 3, label_output = FALSE)[1,,]
+longitudinal_array(alsfrs_data, "subjid", c("p1", "p2", "p3"), 
+                  "visdy", lags = 3, label_output = FALSE)[,1,]
+longitudinal_array(alsfrs_data, "subjid", c("p1", "p2", "p3"),
+                  "visdy", lags = 3, label_output = FALSE)[,,1]
 }

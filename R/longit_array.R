@@ -10,6 +10,9 @@
 #' @param label_output logical. if `TRUE` a list including the matrix with the sliced sequences and a vector with the label is returned.
 #' @param time_var_output logical. Is `time_var` to be included in the final output. Default to `FALSE`.
 #'
+#' @importFrom dplyr arrange
+#' @importFrom abind abind
+#'
 #' @return If `label_output` is `FALSE`, a 3D array with the sliced sequences is returned. The array dimensions are 1st: subject, 2nd: time, 3rd: variable. If `label_output` is `TRUE`, a list with the array and vector with the labels is returned.
 #' @export
 #'
