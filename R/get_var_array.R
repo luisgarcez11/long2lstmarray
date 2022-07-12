@@ -1,5 +1,16 @@
 
-#get a sequence from a variable, subject
+#' Get variable values from subject/variable name pair
+#'
+#' @param data A data frame, data frame extension (e.g. a tibble), or a lazy data frame (e.g. from dbplyr or dtplyr).
+#' @param subj_var A character string referring to the variable that specifies the "subject" variable.
+#' @param subj Any value that the "subject" variable can take.
+#' @param var A character string referring to the variable that contains the variable values.
+#'
+#' @return A vector of values from variable `var` which `subj_var` equal to `subj`.
+#' @export
+#'
+#' @examples 
+#' get_var_sequence(sleep, subj_var = "ID", 1, "extra")
 get_var_sequence <- function(data, subj_var, subj, var){
   
   if(!var %in% names(data)){stop("variable is not part of data")}
@@ -9,8 +20,21 @@ get_var_sequence <- function(data, subj_var, subj, var){
   data[[var]][which(data[[subj_var]] == subj)]
 }
 
-#generate the sequences from the complete sequence
-slice_var_sequence <- function(sequence, lags, label_length, label_output = TRUE){
+#' Generate a matrix with various lags from a sequence
+#'
+#' @param sequence A vector representing the sequence to be sliced into many rows.
+#' @param lags The length of each sliced sequence.
+#' @param label_length How many values after are considered to be the label? Default to 1. If `label_length` = 1, the label value is always the value following the sliced sequence. 
+#' @param label_output logical. if `TRUE` a list including the matrix with the sliced sequences and a vector with the labels is returned.
+#'
+#' @return If `label_output` is `FALSE`, a matrix with the sliced sequences is returned. If `label_output` is `TRUE`, a list with the matrix and vector with the labels is returned.
+#' @export
+#'
+#' @examples
+#' slice_var_sequence(sequence = 1:30, lags = 3, label_length = 1, label_output = TRUE)
+#' slice_var_sequence(sequence = 1:30, lags = 3, label_length = 1, label_output = FALSE)
+#' slice_var_sequence(sequence = 1:30, lags = 3, label_length = 2, label_output = FALSE)
+slice_var_sequence <- function(sequence, lags, label_length = 1, label_output = TRUE){
   
   #sequence must be long enough
   if(length(sequence) <= (lags + label_length - 1)){stop("sequence is not long enough")}
@@ -35,9 +59,24 @@ slice_var_sequence <- function(sequence, lags, label_length, label_output = TRUE
 }
 
 
-get_var_array <- function(data, subj_var, var, time_var, lags, label_var, label_length, label_output = FALSE){
+#' Generate a matrix with various lags from a variable in the dataframe
+#'
+#' @param data A data frame, data frame extension (e.g. a tibble), or a lazy data frame (e.g. from dbplyr or dtplyr).
+#' @param subj_var A character string referring to the variable that specifies the "subject" variable.
+#' @param var A character string referring to the variable that contains the variable values.
+#' @param time_var A character string referring to the variable that contains the time variable values (e.g. visit day, minutes, years).
+#' @param lags The length of each sliced sequence.
+#' @param label_length How many values after are considered to be the label? Default to 1. If `label_length` = 1, the label value is always the value following the sliced sequence. 
+#' @param label_output logical. if `TRUE` a list including the matrix with the sliced sequences and a vector with the label is returned.
+#'
+#' @return If `label_output` is `FALSE`, a matrix with the sliced sequences is returned. If `label_output` is `TRUE`, a list with the matrix and vector with the labels from the same variable is returned.
+#' @export
+#'
+#' @examples
+#' get_var_array(alsfrs_data, "subjid", "p2", "visdy", lags = 3, label_output = FALSE)
+get_var_array <- function(data, subj_var, var, time_var, lags,  label_length = 1, label_output = FALSE){
   
-  #time var must be part of data
+  #time variable must be part of data
   if(!time_var %in% names(data)){stop("time variable is not part of data")}
   
   #safeguard if the data is character

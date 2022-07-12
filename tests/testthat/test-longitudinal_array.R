@@ -12,6 +12,7 @@ test_that("dimensions/type", {
                             label_length = 1, label_output = FALSE)
   
   testthat::expect_true(is.array(obj))
+  testthat::expect_equal(dim(obj)[3], length(vars))
   
   
 })
