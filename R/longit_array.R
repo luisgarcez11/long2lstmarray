@@ -14,10 +14,14 @@
 #' @export
 #'
 #' @examples
-#' longitudinal_array(alsfrs_data, "subjid", c("p1", "p2", "p3"), "visdy", lags = 3, label_output = FALSE)
-#' longitudinal_array(alsfrs_data, "subjid", c("p1", "p2", "p3"), "visdy", lags = 3, label_output = FALSE)[1,,]
-#' longitudinal_array(alsfrs_data, "subjid", c("p1", "p2", "p3"), "visdy", lags = 3, label_output = FALSE)[,1,]
-#' longitudinal_array(alsfrs_data, "subjid", c("p1", "p2", "p3"), "visdy", lags = 3, label_output = FALSE)[,,1]
+#' longitudinal_array(alsfrs_data, "subjid", c("p1", "p2", "p3"), 
+#'                    "visdy", lags = 3, label_output = FALSE)
+#' longitudinal_array(alsfrs_data, "subjid", c("p1", "p2", "p3"),
+#'                    "visdy", lags = 3, label_output = FALSE)[1,,]
+#' longitudinal_array(alsfrs_data, "subjid", c("p1", "p2", "p3"), 
+#'                   "visdy", lags = 3, label_output = FALSE)[,1,]
+#' longitudinal_array(alsfrs_data, "subjid", c("p1", "p2", "p3"),
+#'                   "visdy", lags = 3, label_output = FALSE)[,,1]
 longitudinal_array <- function(data, subj_var, vars, time_var, lags, label_length = 1, label_var = NULL,
                          label_output = FALSE, time_var_output = FALSE){
   
@@ -55,7 +59,7 @@ longitudinal_array <- function(data, subj_var, vars, time_var, lags, label_lengt
   dimnames(x_array)[[3]] <- c(time_var, vars)
   
   #remove time var if time_var_output == TRUE
-  if(time_var_output){x_array <- x_array[,,-which(dimnames(x_array)[[3]] == time_var)]}
+  if(time_var_output == FALSE){x_array <- x_array[,,-which(dimnames(x_array)[[3]] == time_var)]}
   
   #if label output is TRUE, return a list with the array and labels.
   if(label_output){return(list(x = x_array, y = y_array))}else{return(x_array)}
