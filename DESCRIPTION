@@ -1,20 +1,20 @@
 Package: long2lstmarray
 Title: Longitudinal dataframes into arrays for machine learning training
-Version: 0.0.1.
+Version: 0.0.1
 Authors@R: 
-    person(given = "Luis",
-           family = "Garcez",
-           role = c("aut", "cre"),
-           email = "luis_garcez_ferreira@alunos.fc.ul.pt",
-           comment = c(ORCID = "0000-0002-8637-7946"))
+  person(given = "Luis",
+         family = "Garcez",
+         role = c("aut", "cre"),
+         email = "luis_garcez_ferreira@alunos.fc.ul.pt",
+         comment = c(ORCID = "0000-0002-8637-7946"))
 Author: Luis Garcez [aut, cre]
 Maintainer: Luis Garcez <luis_garcez_ferreira@alunos.fc.ul.pt>
 Description: An easy tool to transform 2D longitudinal data into 3D arrays suitable for 
-    LSTM (Long short-term memory) neural networks training. The array output can be
-    used by the 'keras' package. 
+  LSTM (Long short-term memory) neural networks training. The array output can be
+  used by the 'keras' package. 
 Imports:
-    abind,
-    dplyr
+  abind,
+  dplyr
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
@@ -23,10 +23,9 @@ RoxygenNote: 7.1.1
 URL: https://github.com/luisgarcez11/long2lstmarray
 BugReports: https://github.com/luisgarcez11/long2lstmarray/issues
 Suggests: 
-    knitr,
-    rmarkdown,
-    testthat (>= 3.0.0)
-Config/testthat/edition: 3
+  knitr,
+  rmarkdown,
+  testthat (>= 3.0.0)
 Depends: 
-    R (>= 2.10)
+  R (>= 2.10)
 VignetteBuilder: knitr
