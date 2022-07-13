@@ -1,5 +1,5 @@
 ---
-title: "arrary2lstmarray"
+title: "long2lstmarray"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{arrary2lstmarray}
