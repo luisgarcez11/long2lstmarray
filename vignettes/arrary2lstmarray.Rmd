@@ -100,7 +100,7 @@ array3d[,,1]
 The great advantage of this package is that the `longitudinal_array` function output can be used to train LSTMs in R `keras` package or other similar packages to train models that use longitudinal data.
 
 To show an example, first install `keras` package.
-```{r}
+```{r, eval = FALSE}
 #install.packages("keras")
 library(keras)
 ```
@@ -114,7 +114,7 @@ y_train = array3d$y
 ```
 
 Set a LSTM model:
-```{r}
+```{r, eval = FALSE}
 model <- keras::keras_model_sequential()
 model %>%
     layer_lstm(
