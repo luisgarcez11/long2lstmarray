@@ -318,7 +318,6 @@ Set a LSTM model:
 
 ``` r
 model <- keras::keras_model_sequential()
-#> Loaded Tensorflow version 2.8.0
 model %>%
     layer_lstm(
       units = 100,
