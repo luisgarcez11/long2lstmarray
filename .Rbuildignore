@@ -6,3 +6,4 @@
 ^revdep$
 ^\.travis\.yml$
 ^\.github$
+^CRAN-RELEASE$
