@@ -24,7 +24,7 @@ BugReports: https://github.com/luisgarcez11/long2lstmarray/issues
 Suggests: 
   knitr,
   rmarkdown,
-  testthat (>= 3.0.0)
+  testthat
 Depends: 
   R (>= 2.10)
 VignetteBuilder: knitr
