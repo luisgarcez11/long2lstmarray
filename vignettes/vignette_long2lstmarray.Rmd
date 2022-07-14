@@ -56,7 +56,8 @@ get_var_sequence(data = alsfrs_data, subj_var = "subjid", subj = 1, var = "p1")
 Then, the package has the ability to generate a matrix with various lags from a sequence. For example, take a simple numeric sequence:
 
 ```{r}
-slice_var_sequence(sequence = 1:10, lags = 3, label_length = 1, label_output = TRUE)
+slice_var_sequence(sequence = 1:10, lags = 3, 
+                   label_length = 1, label_output = TRUE)
 ```
 
 The result is a list with `x` representing the lags from the sequence, and `y` represents the value that follows each lag, and that will be used as label. If `label_output = FALSE`, only `x` is returned. The `lags` argument represents the number of columns of `x`, and `label_length` represents how many values after the lag is considered to be the label. If `label_length = 1`, the label value is always the value following the sliced sequence.
@@ -66,7 +67,10 @@ The result is a list with `x` representing the lags from the sequence, and `y` r
 This function has the ability to generate a matrix with various lags from a variable in a dataframe. This function is analogous to `slice_var_sequence` but its scope is larger, because it takes an `data.frame` as an argument, and so the `var` to be sequenced has to stated. The `time_var` is the time variable which is important to be stated because it orders the lags correctly.
 
 ```{r}
-get_var_array(data = alsfrs_data, subj_var = "subjid", var = "p3", time_var = "visdy", lags = 5, label_length = 1, label_output = TRUE)
+get_var_array(data = alsfrs_data, subj_var = "subjid",
+              var = "p3", time_var = "visdy",
+              lags = 5, label_length = 1,
+              label_output = TRUE)
 ```
 
 ### `longitudinal_array` function
@@ -74,7 +78,10 @@ get_var_array(data = alsfrs_data, subj_var = "subjid", var = "p3", time_var = "v
 This function is analogous to the previous get_var_array function. This function has the ability to generate a matrix with various lags from various variables in a dataframe. The returned object is a 3D array. The array dimensions are repectively, subject, time and variable. If `label_output` is `TRUE`, a list with the 3D array and vector with the labels is returned.
 
 ```{r}
-array3d <- longitudinal_array(alsfrs_data, "subjid", vars =  c("p1", "p2", "p3"), time_var =  "visdy", lags = 3, label_output = FALSE)
+array3d <- longitudinal_array(alsfrs_data, "subjid",
+                              vars =  c("p1", "p2", "p3"), 
+                              time_var =  "visdy", lags = 3,
+                              label_output = FALSE)
 ```
 
 First dimension, representing the subjects (e.g. subjid = 1):

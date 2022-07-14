@@ -1,6 +1,7 @@
 #' ALSFRS example data
 #'
-#' An example dataset containing Amyotrophic Lateral Sclerosis Functional Rating Scale - Revised (ALSFRS-R)
+#' An example dataset containing Amyotrophic Lateral Sclerosis 
+#' Functional Rating Scale - Revised (ALSFRS-R)
 #'
 #' @format A data frame with 100 rows and 15 variables:
 #' \describe{
