@@ -44,11 +44,17 @@ longitudinal_array <- function(data, subj_var, vars, time_var, lags,
 
   #if label_output = TRUE, label_var must be specified
   if(is.null(label_var) & label_output == TRUE){
-    stop("label variable must be specified if label output is TRUE")}
+    
+    stop("label variable must be specified if label output is TRUE")
+    
+    }
   
   #remove time_var, label_var, subj_var if they are in vars vector
   if(any(c(time_var, label_var, subj_var) %in% vars)){
-    vars <- vars[-which(vars %in% c(time_var, label_var, subj_var)  )]}
+    
+    vars <- vars[-which(vars %in% c(time_var, label_var, subj_var)  )]
+    
+    }
   
   #time array
   x_array <- get_var_array(data = data, subj_var = subj_var, var = time_var, 
@@ -57,6 +63,7 @@ longitudinal_array <- function(data, subj_var, vars, time_var, lags,
   
   #label array
   if(label_output){
+    
     y_array <-  get_var_array(data = data, subj_var = subj_var, 
                               var = label_var, time_var = time_var, 
                               lags = lags, label_length = label_length, 
@@ -87,10 +94,21 @@ longitudinal_array <- function(data, subj_var, vars, time_var, lags,
   
   #remove time var if time_var_output == TRUE
   if(time_var_output == FALSE){
-    x_array <- x_array[,,-which(dimnames(x_array)[[3]] == time_var)]}
+    
+    x_array <- x_array[,,-which(dimnames(x_array)[[3]] == time_var)]
+    
+    }
   
   #if label output is TRUE, return a list with the array and labels.
-  if(label_output){return(list(x = x_array, y = y_array))}else{return(x_array)}
+  if(label_output){
+    
+    return(list(x = x_array, y = y_array))
+    
+  }else{
+      
+    return(x_array)
+    
+    }
   
   
 }

@@ -60,7 +60,11 @@ slice_var_sequence <- function(sequence, lags, label_length = 1,
   
   #sequence must be long enough
   if(length(sequence) <= (lags + label_length - 1)){
-    stop("sequence is not long enough")}
+    
+    stop("sequence is not long enough")
+    
+    }
+  
   
   x_vector <- sequence
   
@@ -136,6 +140,7 @@ get_var_array <- function(data, subj_var, var, time_var,
     sequences <- slice_var_sequence(sequence = complete_sequence, 
                                     lags = lags, label_length = label_length,
                                     label_output = TRUE)$x
+    
     sequences_y <- slice_var_sequence(sequence = complete_sequence,
                                       lags = lags, label_length = label_length,
                                       label_output = TRUE)$y
@@ -146,7 +151,7 @@ get_var_array <- function(data, subj_var, var, time_var,
   }
   
   
-  #dim names
+  #set dim names
   dimnames(x_array)[[1]] <- paste0("seq", seq_along(x_array[[1]]))
   dimnames(x_array)[[2]] <- paste0("time", seq_len(lags))
   
@@ -158,7 +163,8 @@ get_var_array <- function(data, subj_var, var, time_var,
   
   if(label_output == FALSE){  
     
+    return(x_array)
     
-    return(x_array)}
+    }
   
 }
