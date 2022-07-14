@@ -31,7 +31,6 @@ A data frame with 100 rows and 15 variables:
 alsfrs_data
 }
 \description{
-An example dataset containing Amyotrophic Lateral Sclerosis
-Functional Rating Scale - Revised (ALSFRS-R)
+An example dataset containing Amyotrophic Lateral Sclerosis Functional Rating Scale - Revised (ALSFRS-R)
 }
 \keyword{datasets}

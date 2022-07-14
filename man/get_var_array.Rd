@@ -15,38 +15,26 @@ get_var_array(
 )
 }
 \arguments{
-\item{data}{A data frame, data frame extension (e.g. a tibble).}
+\item{data}{A data frame, data frame extension (e.g. a tibble), or a lazy data frame (e.g. from dbplyr or dtplyr).}
 
-\item{subj_var}{A character string referring to the variable that
-specifies the "subject" variable.}
+\item{subj_var}{A character string referring to the variable that specifies the "subject" variable.}
 
-\item{var}{A character string referring to the variable that
-contains the variable values.}
+\item{var}{A character string referring to the variable that contains the variable values.}
 
-\item{time_var}{A character string referring to the variable
-that contains the time variable values (e.g. visit day, minutes, years).}
+\item{time_var}{A character string referring to the variable that contains the time variable values (e.g. visit day, minutes, years).}
 
 \item{lags}{The length of each sliced sequence.}
 
-\item{label_length}{How many values after are considered to
-be the label? Default to 1. If \code{label_length} = 1, the label value´
-is always the value following the sliced sequence.}
+\item{label_length}{How many values after are considered to be the label? Default to 1. If \code{label_length} = 1, the label value is always the value following the sliced sequence.}
 
-\item{label_output}{logical. if \code{TRUE} a list including the
-matrix with the sliced sequences and a vector with the
-label is returned.}
+\item{label_output}{logical. if \code{TRUE} a list including the matrix with the sliced sequences and a vector with the label is returned.}
 }
 \value{
-If \code{label_output} is \code{FALSE},
-a matrix with the sliced sequences is returned.
-If \code{label_output} is \code{TRUE}, a list with the matrix
-and vector with the labels from the same variable is returned.
+If \code{label_output} is \code{FALSE}, a matrix with the sliced sequences is returned. If \code{label_output} is \code{TRUE}, a list with the matrix and vector with the labels from the same variable is returned.
 }
 \description{
 Generate a matrix with various lags from a variable in the dataframe
 }
 \examples{
-get_var_array(alsfrs_data, "subjid", 
-"p2", "visdy", lags = 3, 
-label_output = FALSE)
+get_var_array(alsfrs_data, "subjid", "p2", "visdy", lags = 3, label_output = FALSE)
 }
