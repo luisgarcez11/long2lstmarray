@@ -7,16 +7,19 @@
 get_var_sequence(data, subj_var, subj, var)
 }
 \arguments{
-\item{data}{A data frame, data frame extension (e.g. a tibble), or a lazy data frame (e.g. from dbplyr or dtplyr).}
+\item{data}{A data frame, data frame extension (e.g. a tibble).}
 
-\item{subj_var}{A character string referring to the variable that specifies the "subject" variable.}
+\item{subj_var}{A character string referring to the variable
+that specifies the "subject" variable.}
 
 \item{subj}{Any value that the "subject" variable can take.}
 
-\item{var}{A character string referring to the variable that contains the variable values.}
+\item{var}{A character string referring to the variable that
+contains the variable values.}
 }
 \value{
-A vector of values from variable \code{var} which \code{subj_var} equal to \code{subj}.
+A vector of values from variable \code{var}
+which \code{subj_var} equal to \code{subj}.
 }
 \description{
 Get variable values from subject/variable name pair

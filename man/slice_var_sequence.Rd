@@ -7,22 +7,40 @@
 slice_var_sequence(sequence, lags, label_length = 1, label_output = TRUE)
 }
 \arguments{
-\item{sequence}{A vector representing the sequence to be sliced into many rows.}
+\item{sequence}{A vector representing the sequence
+to be sliced into many rows.}
 
 \item{lags}{The length of each sliced sequence.}
 
-\item{label_length}{How many values after are considered to be the label? Default to 1. If \code{label_length} = 1, the label value is always the value following the sliced sequence.}
+\item{label_length}{How many values after are
+considered to be the label? Default to 1.
+If \code{label_length} = 1, the label value is always
+the value following the sliced sequence.}
 
-\item{label_output}{logical. if \code{TRUE} a list including the matrix with the sliced sequences and a vector with the labels is returned.}
+\item{label_output}{logical. if \code{TRUE} a list
+including the matrix with the sliced
+sequences and a vector with the labels is returned.}
 }
 \value{
-If \code{label_output} is \code{FALSE}, a matrix with the sliced sequences is returned. If \code{label_output} is \code{TRUE}, a list with the matrix and vector with the labels is returned.
+If \code{label_output} is \code{FALSE}, a matrix with
+the sliced sequences is returned.
+If \code{label_output} is \code{TRUE}, a list with
+the matrix and vector with
+the labels is returned.
 }
 \description{
 Generate a matrix with various lags from a sequence
 }
 \examples{
-slice_var_sequence(sequence = 1:30, lags = 3, label_length = 1, label_output = TRUE)
-slice_var_sequence(sequence = 1:30, lags = 3, label_length = 1, label_output = FALSE)
-slice_var_sequence(sequence = 1:30, lags = 3, label_length = 2, label_output = FALSE)
+slice_var_sequence(sequence = 1:30,
+ lags = 3, label_length = 1,
+ label_output = TRUE)
+ 
+slice_var_sequence(sequence = 1:30, 
+lags = 3, label_length = 1,
+ label_output = FALSE)
+ 
+slice_var_sequence(sequence = 1:30,
+ lags = 3, label_length = 2,
+  label_output = FALSE)
 }
