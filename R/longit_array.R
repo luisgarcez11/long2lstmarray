@@ -10,7 +10,7 @@
 #' Important to get the sequences in the right order.
 #' @param lags The length of each sliced sequence.
 #' @param label_length How many values after are considered to be 
-#' the label? Default to 1. If `label_length` = 1, the label value 
+#' the label? Default to 1. If label_length = 1, the label value 
 #' is always the value following the sliced sequence. 
 #' @param label_var A character string referring to the variables 
 #' that contain the label variable values.
@@ -24,7 +24,7 @@
 #'
 #' @return If `label_output` is `FALSE`, a 3D array with the 
 #' sliced sequences is returned. The array dimensions are 
-#' 1st: subject, 2nd: time, 3rd: variable.
+#' subject, time and variable.
 #'  If `label_output` is `TRUE`, a list with the array
 #' and vector with the labels is returned.
 #' @export

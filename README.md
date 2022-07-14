@@ -9,11 +9,11 @@
 The goal of `long2lstmarray` is to transform 2D longitudinal data into
 3D arrays suitable for neural networks training that require
 longitudinal data (e.g. Long short-term memory). The array output can be
-used by the R ‘keras’ or other similar packages as a X/label set.
+used by the R `keras` or other similar packages as a X/label set.
 
 ## Installation
 
-You can install the long2lstmarray from [GitHub](https://github.com/)
+You can install the `long2lstmarray` from [GitHub](https://github.com/)
 with:
 
 ``` r
@@ -150,7 +150,7 @@ get_var_array(data = alsfrs_data, subj_var = "subjid", var = "p3", time_var = "v
 This function is analogous to the previous get_var_array function. This
 function has the ability to generate a matrix with various lags from
 various variables in a dataframe. The returned object is a 3D array. The
-array dimensions are repectively, subject, time and variable. If
+array dimensions are respectively, subject, time and variable. If
 `label_output` is `TRUE`, a list with the 3D array and vector with the
 labels is returned.
 
@@ -158,7 +158,7 @@ labels is returned.
 array3d <- longitudinal_array(alsfrs_data, "subjid", vars =  c("p1", "p2", "p3"), time_var =  "visdy", lags = 3, label_output = FALSE)
 ```
 
-First dimension, representing the subjects (e.g. subjid = 1):
+First dimension, representing the subjects (e.g. `subjid` = 1):
 
 ``` r
 array3d[1,,]
@@ -230,7 +230,7 @@ array3d[,1,]
 #> seq55  4  3  4
 ```
 
-Third dimension, representing the variables (e.g. p1):
+Third dimension, representing the variables (e.g. `p1`):
 
 ``` r
 array3d[,,1] 
@@ -295,8 +295,9 @@ array3d[,,1]
 ## `keras` interface
 
 The great advantage of this package is that the `longitudinal_array`
-function output can be used to train LSTMs in R `keras` package or other
-similar packages to train models that use longitudinal data.
+function output can be used to train Long short-term memory neural
+networks in R `keras` package or other similar packages to train models
+that use longitudinal data.
 
 To show an example, first install `keras` package.
 
@@ -314,7 +315,7 @@ x_train = array3d$x
 y_train = array3d$y
 ```
 
-Set a LSTM model:
+Set a Long short-term memory neural network model:
 
 ``` r
 model <- keras::keras_model_sequential()

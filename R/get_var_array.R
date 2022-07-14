@@ -30,7 +30,7 @@ get_var_sequence <- function(data, subj_var, subj, var){
 #' @param lags The length of each sliced sequence.
 #' @param label_length How many values after are 
 #' considered to be the label? Default to 1.
-#'  If `label_length` = 1, the label value is always
+#'  If label_length = 1, the label value is always
 #'   the value following the sliced sequence. 
 #' @param label_output logical. if `TRUE` a list 
 #' including the matrix with the sliced 
@@ -98,7 +98,7 @@ slice_var_sequence <- function(sequence, lags, label_length = 1,
 #' that contains the time variable values (e.g. visit day, minutes, years).
 #' @param lags The length of each sliced sequence.
 #' @param label_length How many values after are considered to 
-#' be the label? Default to 1. If `label_length` = 1, the label value´
+#' be the label? Default to 1. If label_length = 1, the label value´
 #'  is always the value following the sliced sequence. 
 #' @param label_output logical. if `TRUE` a list including the 
 #' matrix with the sliced sequences and a vector with the 
