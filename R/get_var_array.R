@@ -9,7 +9,7 @@
 #' contains the variable values.
 #'
 #' @return A vector of values from variable `var`
-#'  which `subj_var` equal to `subj`.
+#' which `subj_var` equal to `subj`.
 #' @export
 #'
 #' @examples 

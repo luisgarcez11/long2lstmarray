@@ -3,7 +3,7 @@
 \docType{data}
 \name{alsfrs_data}
 \alias{alsfrs_data}
-\title{ALSFRS example data}
+\title{Clinical scale example data}
 \format{
 A data frame with 100 rows and 15 variables:
 \describe{

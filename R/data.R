@@ -1,4 +1,4 @@
-#' ALSFRS example data
+#' Clinical scale example data
 #'
 #' An example dataset containing Amyotrophic Lateral Sclerosis 
 #' Functional Rating Scale - Revised.

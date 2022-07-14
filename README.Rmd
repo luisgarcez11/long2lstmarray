@@ -4,7 +4,7 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
+```{r, include = FALSE, eval = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -13,11 +13,8 @@ knitr::opts_chunk$set(
 )
 ```
 
-# long2lstmarray
+# `long2lstmarray`
 
-<!-- badges: start -->
-
-<!-- badges: end -->
 
 The goal of `long2lstmarray` is to transform 2D longitudinal data into 3D arrays suitable for neural networks training that require longitudinal data (e.g. Long short-term memory). The array output can be used by the R `keras` or other similar packages as a X/label set.
 
