@@ -15,7 +15,7 @@ get_var_array(
 )
 }
 \arguments{
-\item{data}{A data frame, data frame extension (e.g. a tibble).}
+\item{data}{A data frame, data frame extension (e.g. a \code{tibble}).}
 
 \item{subj_var}{A character string referring to the variable that
 specifies the "subject" variable.}

@@ -7,7 +7,7 @@
 get_var_sequence(data, subj_var, subj, var)
 }
 \arguments{
-\item{data}{A data frame, data frame extension (e.g. a tibble).}
+\item{data}{A data frame, data frame extension (e.g. a \code{tibble}).}
 
 \item{subj_var}{A character string referring to the variable
 that specifies the "subject" variable.}

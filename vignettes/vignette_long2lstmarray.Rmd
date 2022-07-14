@@ -1,0 +1,101 @@
+---
+title: "long2lstmarray"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{arrary2lstmarray}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+<!-- badges: start -->
+
+<!-- badges: end -->
+
+The goal of `long2lstmarray` is to transform 2D longitudinal data into 3D arrays suitable for neural networks training that require longitudinal data (e.g. Long short-term memory). The array output can be used by the R 'keras' or other similar packages as a X/label set.
+
+## Installation
+
+You can install the long2lstmarray from [GitHub](https://github.com/) with:
+
+```{r, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("luisgarcez11/long2lstmarray")
+```
+
+
+## Guide
+
+We will follow a step-by-step approach, starting with the most basic function and advancing to the most advanced function. Note that the most advanced functions rely on the most basic ones to function properly.
+
+### Data
+
+The `alsfrs_data` dataset will be used to guide you through the package functionality. This data is invented.
+
+```{r example, eval = TRUE}
+library(long2lstmarray)
+head(alsfrs_data, n = 10)
+```
+
+### `get_var_sequence` function
+
+The most basic function has the goal to retrieve the variable values from a subject/variable name pair, like this:
+
+```{r}
+get_var_sequence(data = alsfrs_data, subj_var = "subjid", subj = 1, var = "p1")
+```
+
+### `slice_var_sequence` function
+
+Then, the package has the ability to generate a matrix with various lags from a sequence. For example, take a simple numeric sequence:
+
+```{r}
+slice_var_sequence(sequence = 1:10, lags = 3, 
+                   label_length = 1, label_output = TRUE)
+```
+
+The result is a list with `x` representing the lags from the sequence, and `y` represents the value that follows each lag, and that will be used as label. If `label_output = FALSE`, only `x` is returned. The `lags` argument represents the number of columns of `x`, and `label_length` represents how many values after the lag is considered to be the label. If `label_length = 1`, the label value is always the value following the sliced sequence.
+
+### `get_var_array` function
+
+This function has the ability to generate a matrix with various lags from a variable in a dataframe. This function is analogous to `slice_var_sequence` but its scope is larger, because it takes an `data.frame` as an argument, and so the `var` to be sequenced has to stated. The `time_var` is the time variable which is important to be stated because it orders the lags correctly.
+
+```{r}
+get_var_array(data = alsfrs_data, subj_var = "subjid",
+              var = "p3", time_var = "visdy",
+              lags = 5, label_length = 1,
+              label_output = TRUE)
+```
+
+### `longitudinal_array` function
+
+This function is analogous to the previous get_var_array function. This function has the ability to generate a matrix with various lags from various variables in a dataframe. The returned object is a 3D array. The array dimensions are respectively, subject, time and variable. If `label_output` is `TRUE`, a list with the 3D array and vector with the labels is returned.
+
+```{r}
+array3d <- longitudinal_array(alsfrs_data, "subjid",
+                              vars =  c("p1", "p2", "p3"), 
+                              time_var =  "visdy", lags = 3,
+                              label_output = FALSE)
+```
+
+First dimension, representing the subjects (e.g. `subjid` = 1):
+```{r}
+array3d[1,,]
+```
+
+Second dimension, representing time (e.g. first visit):
+```{r}
+array3d[,1,]
+```
+
+Third dimension, representing the variables (e.g. `p1`):
+```{r}
+array3d[,,1] 
+```

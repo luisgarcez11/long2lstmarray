@@ -1,6 +1,6 @@
 #' Generate a matrix with various lags from a dataframe
 #'
-#' @param data A data frame, data frame extension (e.g. a tibble).
+#' @param data A data frame, data frame extension (e.g. a `tibble`).
 #' @param subj_var A character string referring to the variable 
 #' that specifies the "subject" variable.
 #' @param vars A character string referring to the variables 
@@ -10,7 +10,7 @@
 #' Important to get the sequences in the right order.
 #' @param lags The length of each sliced sequence.
 #' @param label_length How many values after are considered to be 
-#' the label? Default to 1. If label_length = 1, the label value 
+#' the label? Default to 1. If `label_length` = 1, the label value 
 #' is always the value following the sliced sequence. 
 #' @param label_var A character string referring to the variables 
 #' that contain the label variable values.

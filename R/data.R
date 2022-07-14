@@ -22,4 +22,4 @@
 #'   \item{x3r}{Scale items}
 #' }
 #' @source \url{https://pubmed.ncbi.nlm.nih.gov/10540002/}
-""
+"alsfrs_data"

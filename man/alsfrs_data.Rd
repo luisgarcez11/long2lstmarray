@@ -32,6 +32,6 @@ alsfrs_data
 }
 \description{
 An example dataset containing Amyotrophic Lateral Sclerosis
-Functional Rating Scale - Revised (ALSFRS-R)
+Functional Rating Scale - Revised.
 }
 \keyword{datasets}

@@ -17,7 +17,7 @@ longitudinal_array(
 )
 }
 \arguments{
-\item{data}{A data frame, data frame extension (e.g. a tibble).}
+\item{data}{A data frame, data frame extension (e.g. a \code{tibble}).}
 
 \item{subj_var}{A character string referring to the variable
 that specifies the "subject" variable.}
@@ -47,7 +47,7 @@ in the final output. Default to \code{FALSE}.}
 \value{
 If \code{label_output} is \code{FALSE}, a 3D array with the
 sliced sequences is returned. The array dimensions are
-1st: subject, 2nd: time, 3rd: variable.
+subject, time and variable.
 If \code{label_output} is \code{TRUE}, a list with the array
 and vector with the labels is returned.
 }
