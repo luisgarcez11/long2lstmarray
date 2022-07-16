@@ -10,7 +10,8 @@ Authors@R:
 Maintainer: Luis Garcez <luis_garcez_ferreira@alunos.fc.ul.pt>
 Description: An easy tool to transform 2D longitudinal data into 3D arrays suitable for 
   Long short-term memory neural networks training. The array output can be
-  used by the `keras` package. 
+  used by the 'keras' package. Long short-term memory neural networks are described
+  in: Hochreiter, S., & Schmidhuber, J. (1997) <doi:10.1162/neco.1997.9.8.1735>.
 Imports:
   abind,
   dplyr
