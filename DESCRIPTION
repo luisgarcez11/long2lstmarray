@@ -5,7 +5,7 @@ Authors@R:
   person(given = "Luis",
          family = "Garcez",
          role = c("aut", "cre", "cph"),
-         email = "luis_garcez_ferreira@alunos.fc.ul.pt",
+         email = "luisgarcez1@gmail.com",
          comment = c(ORCID = "0000-0002-8637-7946"))
 Maintainer: Luis Garcez <luis_garcez_ferreira@alunos.fc.ul.pt>
 Description: An easy tool to transform 2D longitudinal data into 3D arrays suitable for 
