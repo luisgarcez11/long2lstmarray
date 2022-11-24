@@ -1,10 +1,6 @@
 
-## Resubmission
-This is a resubmission. 
-
-* keras is now under undirected quotation marks in the description text.
-
-* New added reference in description field. in the DESCRIPTION file.
+## Submission
+This is a new version with updated e-mail.
 
 
 keras and Dataframes are not mispelled words.
