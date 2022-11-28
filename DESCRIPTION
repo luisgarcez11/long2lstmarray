@@ -7,7 +7,7 @@ Authors@R:
          role = c("aut", "cre", "cph"),
          email = "luisgarcez1@gmail.com",
          comment = c(ORCID = "0000-0002-8637-7946"))
-Maintainer: Luis Garcez <luisgarcez1@gmail>
+Maintainer: Luis Garcez <luisgarcez1@gmail.com>
 Description: An easy tool to transform 2D longitudinal data into 3D arrays suitable for 
   Long short-term memory neural networks training. The array output can be
   used by the 'keras' package. Long short-term memory neural networks are described
